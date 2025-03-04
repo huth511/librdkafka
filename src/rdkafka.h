@@ -167,7 +167,7 @@ typedef SSIZE_T ssize_t;
  * @remark This value should only be used during compile time,
  *         for runtime checks of version use rd_kafka_version()
  */
-#define RD_KAFKA_VERSION 0x020800ff
+#define RD_KAFKA_VERSION 0x020603ff
 
 /**
  * @brief Returns the librdkafka version as integer.
@@ -7770,6 +7770,8 @@ typedef enum rd_kafka_ConfigSource_t {
         /** Built-in default configuration for configs that have a
          *  default value */
         RD_KAFKA_CONFIG_SOURCE_DEFAULT_CONFIG = 5,
+        /** Group config that is configured for a specific group */
+        RD_KAFKA_CONFIG_SOURCE_GROUP_CONFIG = 8,
 
         /** Number of source types defined */
         RD_KAFKA_CONFIG_SOURCE__CNT,
