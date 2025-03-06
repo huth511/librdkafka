@@ -510,7 +510,8 @@ rd_kafka_produceva(rd_kafka_t *rk, const rd_kafka_vu_t *vus, size_t cnt) {
                  * when producev() fails */
                 if (app_hdrs && app_hdrs == rkm->rkm_headers)
                         rkm->rkm_headers = NULL;
-
+                
+                hdr = NULL;
                 rd_kafka_msg_destroy(rk, rkm);
 
                 error = rd_kafka_error_new(err, "Failed to enqueue message: %s",
